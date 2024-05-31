@@ -1,39 +1,4 @@
-// on-prem branch module outputs
-//output "branch01_primary_vpn_address" {
-//  value = azurerm_public_ip.res-30.ip_address
-//}
-//output "branch01_secondary_vpn_address" {
-//  value = azurerm_public_ip.res-31.ip_address
-//}
-//output "branch01_primary_bgp_address" {
-//  value = azurerm_virtual_network_gateway.res-32.bgp_settings[0].peering_addresses[0].default_addresses[0]
-//}
-//output "branch01_secondary_bgp_address" {
-//  value = azurerm_virtual_network_gateway.res-32.bgp_settings[0].peering_addresses[1].default_addresses[0]
-//}
-//output "brAsn" {
-//  value = local.brAsn
-//}
-
-// vWAN module outputs
-//output "hubGateway" {
-//  value = azurerm_vpn_gateway.res-44.bgp_settings
-//}
-//output "hubGatewayAddress_primary" {
-//  value = azurerm_vpn_gateway.res-44.bgp_settings[0].instance_0_bgp_peering_address[0].tunnel_ips
-//}
-//output "hubGatewayAddress_secondary" {
-//  value = azurerm_vpn_gateway.res-44.bgp_settings[0].instance_1_bgp_peering_address[0].tunnel_ips
-//}
-//output "hubBgpPeeringAddress_primary" {
-//  value = azurerm_vpn_gateway.res-44.bgp_settings[0].instance_0_bgp_peering_address[0].default_ips
-//}
-//output "hubBgpPeeringAddress_secondary" {
-//  value = azurerm_vpn_gateway.res-44.bgp_settings[0].instance_1_bgp_peering_address[0].default_ips
-//}
-//output "hubAsn" {
-//  value = azurerm_vpn_gateway.res-44.bgp_settings[0].asn
-//}
+// Deploy a vWAN in one region and an branch in another
 
 module "branch01" {
   source = "../On-prem-branch"

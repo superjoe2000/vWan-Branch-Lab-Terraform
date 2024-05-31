@@ -1,10 +1,5 @@
 // BGP settings from Hub
 locals {
-//  hubGatewayAddress_primary      = module.vwan.hubGatewayAddress_primary
-//  hubGatewayAddress_secondary    = module.vwan.hubGatewayAddress_secondary
-//  hubBgpPeeringAddress_primary   = module.vwan.hubBgpPeeringAddress_primary
-//  hubBgpPeeringAddress_secondary = module.vwan.hubBgpPeeringAddress_secondary
-//  hubAsn                         = module.vwan.hubAsn
   brAsn                          = 65533
 }
 
@@ -73,34 +68,6 @@ resource "azurerm_virtual_machine_extension" "res-3" {
     azurerm_windows_virtual_machine.res-2,
   ]
 }
-//resource "azurerm_virtual_machine_extension" "res-4" {
-//  auto_upgrade_minor_version = true
-//  name                       = "DependencyAgentWindows"
-//  publisher                  = "Microsoft.Azure.Monitoring.DependencyAgent"
-//  type                       = "DependencyAgentWindows"
-//  type_handler_version       = "9.10"
-//  virtual_machine_id         = "/subscriptions/21e1ef34-0963-45a7-adf0-9ec348b85362/resourceGroups/rg-jlab-branch01/providers/Microsoft.Compute/virtualMachines/vmjlabbr01srv"
-//  depends_on = [
-//    azurerm_windows_virtual_machine.res-2,
-//  ]
-//}
-//resource "azurerm_virtual_machine_extension" "res-6" {
-//  name      = "WindowsAgent.AzureSecurityCenter"
-//  publisher = "Qualys"
-//  settings = jsonencode({
-//    GrayLabel = {
-//      CustomerID = "a58a32b1-cb6c-4add-b54a-e333a078870f"
-//      ResourceID = "955d4cd2-8a35-50d5-230a-c0385c10f54b"
-//    }
-//    LicenseCode = "eyJjaWQiOiI2YmVmMTdlZC0xNjUyLWM0YWQtODFlOC05ZWQ4N2YyM2I0ZDIiLCJhaWQiOiIwZGJkNDlkMC02ODk4LTQ4ZTgtOThkZC1mNjU2NTg1N2ZkNDAiLCJwd3NVcmwiOiJodHRwczovL3FhZ3B1YmxpYy5xZzMuYXBwcy5xdWFseXMuY29tL0Nsb3VkQWdlbnQvIiwicHdzUG9ydCI6IjQ0MyJ9"
-//  })
-//  type                 = "WindowsAgent.AzureSecurityCenter"
-//  type_handler_version = "1.0"
-//  virtual_machine_id   = "/subscriptions/21e1ef34-0963-45a7-adf0-9ec348b85362/resourceGroups/rg-jlab-branch01/providers/Microsoft.Compute/virtualMachines/vmjlabbr01srv"
-//  depends_on = [
-//    azurerm_windows_virtual_machine.res-2,
-//  ]
-//}
 resource "azurerm_dev_test_global_vm_shutdown_schedule" "res-7" {
   daily_recurrence_time = "1900"
   location              = "centralus"
@@ -196,57 +163,6 @@ resource "azurerm_network_security_group" "res-25" {
     azurerm_resource_group.res-1,
   ]
 }
-//resource "azurerm_network_security_rule" "res-26" {
-//  access                      = "Allow"
-//  description                 = "CSS Governance Security Rule.  Allow Corpnet inbound.  https://aka.ms/casg"
-//  destination_address_prefix  = "*"
-//  destination_port_range      = "*"
-//  direction                   = "Inbound"
-//  name                        = "AllowCorpnet"
-//  network_security_group_name = "vnet-jlab-branch01-Compute-nsg-centralus"
-//  priority                    = 2700
-//  protocol                    = "*"
-//  resource_group_name         = "rg-jlab-branch01"
-//  source_address_prefix       = "CorpNetPublic"
-//  source_port_range           = "*"
-//  depends_on = [
-//    azurerm_network_security_group.res-25,
-//  ]
-//}
-//resource "azurerm_network_security_rule" "res-27" {
-//  access                      = "Allow"
-//  description                 = "CSS Governance Security Rule.  Allow SAW inbound.  https://aka.ms/casg"
-//  destination_address_prefix  = "*"
-//  destination_port_range      = "*"
-//  direction                   = "Inbound"
-//  name                        = "AllowSAW"
-//  network_security_group_name = "vnet-jlab-branch01-Compute-nsg-centralus"
-//  priority                    = 2701
-//  protocol                    = "*"
-//  resource_group_name         = "rg-jlab-branch01"
-//  source_address_prefix       = "CorpNetSaw"
-//  source_port_range           = "*"
-//  depends_on = [
-//    azurerm_network_security_group.res-25,
-//  ]
-//}
-//resource "azurerm_network_security_rule" "res-28" {
-//  access                      = "Deny"
-//  description                 = "MDC JIT Network Access rule for policy 'default' of VM 'vmjlabbr01srv'."
-//  destination_address_prefix  = "192.168.1.4"
-//  destination_port_range      = "3389"
-//  direction                   = "Inbound"
-//  name                        = "MicrosoftDefenderForCloud-JITRule_1208187557_D3B6E971EAA540409CE3DFAC19BDE7D8"
-//  network_security_group_name = "vnet-jlab-branch01-Compute-nsg-centralus"
-//  priority                    = 4096
-//  protocol                    = "*"
-//  resource_group_name         = "rg-jlab-branch01"
-//  source_address_prefix       = "*"
-//  source_port_range           = "*"
-//  depends_on = [
-//    azurerm_network_security_group.res-25,
-//  ]
-//}
 resource "azurerm_public_ip" "res-29" {
   allocation_method   = "Static"
   location            = "centralus"
