@@ -70,7 +70,7 @@ terraform apply main.tfplan
 A successful deployment will show the following output:
 
 ```bash
-Apply complete! Resources: 7 added, 0 changed, 0 destroyed.
+Apply complete! Resources: 39 added, 0 changed, 0 destroyed.
 
 Outputs:
 
