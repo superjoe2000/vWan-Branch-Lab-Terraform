@@ -23,7 +23,7 @@ resource "azurerm_resource_group" "res-2" {
 }
 resource "azurerm_windows_virtual_machine" "res-3" {
   admin_password                                         = "SecretP@ssw0rd"
-  admin_username                                         = "joe"
+  admin_username                                         = "azureadmin"
   bypass_platform_safety_checks_on_user_schedule_enabled = true
   license_type                                           = "Windows_Server"
   location                                               = "southcentralus"
@@ -62,8 +62,7 @@ resource "azurerm_dev_test_global_vm_shutdown_schedule" "res-8" {
   timezone              = "Central Standard Time"
   virtual_machine_id    = "/subscriptions/21e1ef34-0963-45a7-adf0-9ec348b85362/resourceGroups/rg-jlab-vwan/providers/Microsoft.Compute/virtualMachines/vmjlablz1srv01"
   notification_settings {
-    email   = "admin@MngEnv024722.onmicrosoft.com"
-    enabled = true
+    enabled = false
   }
   depends_on = [
     azurerm_windows_virtual_machine.res-3,

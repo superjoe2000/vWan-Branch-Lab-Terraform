@@ -100,7 +100,7 @@ The current Azure VPN gateway is capable of providing Active-Active resiliency f
 
 The architecture is described in this Microsoft learn article:
 [About Highly Available gateway configurations - Azure VPN Gateway | Microsoft Learn](https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-highlyavailable#dual-redundancy-active-active-vpn-gateways-for-both-azure-and-on-premises-networks).
-It shows and Active-Active VPN Gateway in Azure connected to two routers in the on-premises site that are set up with BGP and form a highly resilient "bow-tie" connection path architecture.
+It shows an Active-Active VPN Gateway in Azure connected to two routers in the on-premises site that are set up with BGP and form a highly resilient "bow-tie" connection path architecture.
 
 There is a step-by-step guide to deploy using the Portal:
 [Configure active-active VPN gateways: Azure portal - Azure VPN Gateway | Microsoft Learn](https://learn.microsoft.com/en-us/azure/vpn-gateway/active-active-portal).

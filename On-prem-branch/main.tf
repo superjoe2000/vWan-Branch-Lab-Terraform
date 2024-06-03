@@ -25,7 +25,7 @@ resource "azurerm_resource_group" "res-1" {
 }
 resource "azurerm_windows_virtual_machine" "res-2" {
   admin_password                                         = "SecretP@ssw0rd"
-  admin_username                                         = "joe"
+  admin_username                                         = "azureadmin"
   bypass_platform_safety_checks_on_user_schedule_enabled = true
   license_type                                           = "Windows_Server"
   location                                               = "centralus"
@@ -74,7 +74,6 @@ resource "azurerm_dev_test_global_vm_shutdown_schedule" "res-7" {
   timezone              = "Central Standard Time"
   virtual_machine_id    = "/subscriptions/21e1ef34-0963-45a7-adf0-9ec348b85362/resourceGroups/rg-jlab-branch01/providers/Microsoft.Compute/virtualMachines/vmjlabbr01srv"
   notification_settings {
-    email   = "admin@MngEnv024722.onmicrosoft.com"
     enabled = false
   }
   depends_on = [
@@ -151,8 +150,8 @@ resource "azurerm_network_interface" "res-24" {
   }
   depends_on = [
     azurerm_public_ip.res-29,
-    azurerm_virtual_network.res-33
-    # One of azurerm_subnet.res-34,azurerm_subnet_network_security_group_association.res-35 (can't auto-resolve as their ids are identical)
+    azurerm_virtual_network.res-33,
+    azurerm_subnet.res-34
   ]
 }
 resource "azurerm_network_security_group" "res-25" {
