@@ -1,5 +1,10 @@
 # vWan-Branch-Lab-Terraform
 
+<!--
+Link to the repository:
+https://github.com/superjoe2000/vWan-Branch-Lab-Terraform/
+-->
+
 Terraform code to deploy a vWAN in Azure and a remote branch site with Active-Active VPN S2S connectivity
 
 ## File Organization
